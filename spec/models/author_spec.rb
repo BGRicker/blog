@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'creates a post' do
-    let(:post) { create(:post) }
+    let(:author) { create(:author) }
 
     it 'is a valid factory' do
-      expect(post).to be_valid
+      expect(author).to be_valid
     end
   end
 end
