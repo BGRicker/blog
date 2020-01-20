@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+author = Author.last
+10.times do
+  Post.create(title: Faker::Superhero.name, body: Faker::Lorem.sentence(word_count: 300), author_id: author.id)
+end
