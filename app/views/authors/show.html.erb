@@ -14,11 +14,17 @@
           <img class="d-flex mr-3 rounded-circle" src="/author.png" alt="Generic placeholder image">
           <div class="media-body">
 
+            <p class="mb-0"><%= @author.bio %></p>
             <ul class="socials list-unstyled mb-0 mt-3">
-              <li><a href="http://facebook.com"><i class="mdi mdi-facebook"></i></a></li>
-              <li><a href="http://twitter.com"><i class="mdi mdi-twitter"></i></a></li>
-              <li><a href="http://instagram.com"><i class="mdi mdi-instagram"></i></a></li>
-              <li><a href="http://pinterest.com"><i class="mdi mdi-pinterest"></i></a></li>
+              <% if @author.twitter %>
+                <li><a href="#{@author.twitter_url}"><i class="mdi mdi-twitter"></i></a></li>
+              <% end %>
+              <% if @author.website %>
+                <li><a href="#{@author.website}"><i class="mdi mdi-laptop"></i></a></li>
+              <% end %>
+              <% if @author.github %>
+                <li><a href="#{@author.github_url}"><i class="mdi mdi-search-web"></i></a></li>
+              <% end %>
             </ul>
           </div>
         </div>

@@ -26,10 +26,17 @@
               <h4 class="media-heading"><%= link_to @post.author.name, @post.author %> </a></h4>
               <p class="mb-0"><%= @post.author.bio %></p>
 
-              <ul class="socials list-unstyled mb-0 mt-3">
-                <li><a href="http://twitter.com"><i class="mdi mdi-twitter"></i></a></li>
-                <li><a href="http://github.com"><i class="mdi mdi-book-open"></i></a></li>
-              </ul>
+            <ul class="socials list-unstyled mb-0 mt-3">
+              <% if @post.author.twitter %>
+                <li><a href="#{@author.twitter_url}"><i class="mdi mdi-twitter"></i></a></li>
+              <% end %>
+              <% if @post.author.website %>
+                <li><a href="#{@author.website}"><i class="mdi mdi-laptop"></i></a></li>
+              <% end %>
+              <% if @post.author.github %>
+                <li><a href="#{@author.github_url}"><i class="mdi mdi-search-web"></i></a></li>
+              <% end %>
+            </ul>
             </div>
           </div>
         </div>
