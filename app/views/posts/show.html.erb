@@ -1,14 +1,39 @@
-<p id="notice"><%= notice %></p>
+<section class="pb-5">
+  <div class="container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+    <div class="row pt-2">
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+      <!-- Post-->
+      <article class="post">
+        <div class="post-header">
+          <h2 class="post-title"><%= @post.title %></h1>
+          <ul class="post-meta">
+            <li><i class="mdi mdi-account-box"></i> <%= @post.author.name %></li>
+            <li><i class="mdi mdi-calendar"></i> <%= @post.posted_at %></li>
+          </ul>
+        </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+        <div class="post-preview">
+          <a href="blog-single.html"><img src="images/blog/blog-1.jpg" alt="" class="img-fluid rounded"></a>
+        </div>
+
+        <div class="blog-detail-description">
+          <p><%= @post.body %></p>
+
+          <div class="media post-author-box">
+            <img class="d-flex mr-3 rounded-circle" src="/author.png" alt="Author image">
+            <div class="media-body">
+              <h4 class="media-heading"><%= link_to @post.author.name, @post.author %> </a></h4>
+              <p class="mb-0"><%= @post.author.bio %></p>
+
+              <ul class="socials list-unstyled mb-0 mt-3">
+                <li><a href="http://twitter.com"><i class="mdi mdi-twitter"></i></a></li>
+                <li><a href="http://github.com"><i class="mdi mdi-book-open"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </div>

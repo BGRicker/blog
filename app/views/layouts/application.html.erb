@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>Bootcamp Bridge</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+    <body>
+      <div id="wrapper">
+        <div class="topbar-mobile">
+          <div class="logo">
+            <a href="/"><img src="/images/logo.png" alt="cool" style="height: 118px;"></a>
+            <button class="button-menu-mobile">
+              <i class="mdi mdi-menu"></i>
+            </button>
+          </div>
+        </div>
+
+        <%= render 'layouts/sidenav' %>
+
+        <div class="page-wrapper">
+          <div class="col-md-10 col-xs-12">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+
+            <%= yield %>
+
+          </div>
+        </div>
+    </body>
 </html>
