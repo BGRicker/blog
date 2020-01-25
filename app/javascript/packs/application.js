@@ -7,9 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("jquery3")
-require("popper")
-require("bootstrap-sprockets")
+require("trix")
+require("@rails/actiontext")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -18,3 +17,4 @@ require("bootstrap-sprockets")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+

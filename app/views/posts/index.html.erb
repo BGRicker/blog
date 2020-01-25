@@ -11,7 +11,7 @@
               </ul>
             </div>
             <div class="post-content">
-              <p><%= post.post_preview %></p>
+              <%= truncate(strip_tags(post.rich_text_body.to_s), length: 100) %>
             </div>
             <div><%= link_to 'Read More', post, class: "btn btn-outline-custom"%> <i class="mdi mdi-arrow-right"></i></a></div>
           </article>
