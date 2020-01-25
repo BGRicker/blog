@@ -2,9 +2,10 @@
 
 class Post < ApplicationRecord
   belongs_to :author
+  has_rich_text :body
 
   def post_preview
-    body.truncate_words(50)
+    body.body.truncate_words(50)
   end
 
   def posted_at
