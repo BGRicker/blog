@@ -7,6 +7,12 @@
       <article class="post">
         <div class="post-header">
           <h2 class="post-title"><%= @post.title %></h1>
+          <% if @post.author == current_author %>
+            <ul class="post-meta">
+              <%= link_to "Edit Post", edit_post_path(@post) %>
+              <%= link_to "Delete Post", post_path(@post), method: :delete %>
+            </ul>
+          <% end %>
           <ul class="post-meta">
             <li><i class="mdi mdi-account-box"></i> <%= @post.author.name %></li>
             <li><i class="mdi mdi-calendar"></i> <%= @post.posted_at %></li>
